@@ -10,7 +10,7 @@ class EsieaApplication : Application(){
         // start Koin!
         startKoin {
             androidContext(this@EsieaApplication)
-            modules(presentationModule)
+            modules(presentationModule, domainModule, dataModule)
         }
     }
 }
