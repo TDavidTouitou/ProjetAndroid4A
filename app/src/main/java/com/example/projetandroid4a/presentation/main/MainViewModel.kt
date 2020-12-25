@@ -32,14 +32,10 @@ class MainViewModel(
 
         }
     }
-/*
-    fun onClickedCreateUser(emailUser: String, password: String, confirmedPassword: String) {
+
+    fun onClickedCreateUser(user: User) {
         viewModelScope.launch(Dispatchers.IO) {
-           if (password == confirmedPassword){
-               var user: User
-               user.email= emailUser
-               CreateUserUseCase(user)
-           }
+           createUserUseCase.invoke(user)
         }
-    }*/
+    }
 }
