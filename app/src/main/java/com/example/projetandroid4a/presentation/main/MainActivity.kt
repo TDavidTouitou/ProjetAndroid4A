@@ -1,5 +1,6 @@
 package com.example.projetandroid4a.presentation.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -35,8 +36,9 @@ class MainActivity : AppCompatActivity() {
         login_button.setOnClickListener {
             mainViewModel.onClickedLogin(login_edit.text.toString().trim(), password_edit.text.toString())
         }
-        /*mainViewModel.counter.observe(this, Observer {
-            value -> main_text.text = value.toString()
-        })*/
+        create_account_button.setOnClickListener(){
+            val myIntent : Intent =  Intent(this,Main2Activity::class.java)
+            startActivity(myIntent)
+        }
     }
 }
