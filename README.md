@@ -11,10 +11,14 @@ Réalisation dans le cadre d'un projet de 4ème année au sein de l'ESIEA d'une 
 
 ## Caractéristiques
 
-### Ecran d'accueil avec la liste de pokémons.
+### Ecran d'accueil.
 
-<img src="images/MainScreen.jpg" width="250">
+<img src="ImgProjMob4A/FirstScreen.PNG" width="250">
 
-### Ecran qui affiche les détails du pokémon choisi.
+### Ecran qui affiche la page de création de compte
 
-<img src="images/DetailsScreen.jpg" width="250">
+<img src="ImgProjMob4A/CreateAccountScreen.PNG" width="250">
+
+### Ecran avec la liste de pokémons.
+
+<img src="ImgProjMob4A/ListScreen.PNG" width="250">
