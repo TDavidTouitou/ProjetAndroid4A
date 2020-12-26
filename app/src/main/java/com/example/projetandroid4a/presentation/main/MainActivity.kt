@@ -20,7 +20,8 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.loginLiveData.observe(this, Observer {
             when(it){
                 is LoginSuccess -> {
-                    //TODO navigate
+                    val myIntent : Intent =  Intent(this,Main3Activity::class.java)
+                    startActivity(myIntent)
                 }
                 LoginError -> {
                     MaterialAlertDialogBuilder(this)
@@ -35,9 +36,6 @@ class MainActivity : AppCompatActivity() {
         })
         login_button.setOnClickListener {
             mainViewModel.onClickedLogin(login_edit.text.toString().trim(), password_edit.text.toString())
-
-            val myIntent : Intent =  Intent(this,Main3Activity::class.java)
-            startActivity(myIntent)
         }
         create_account_button.setOnClickListener(){
             val myIntent : Intent =  Intent(this,Main2Activity::class.java)
