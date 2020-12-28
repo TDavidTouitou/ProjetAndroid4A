@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main2.*
 import org.koin.android.ext.android.inject
 
-class Main2Activity : AppCompatActivity() {
+class CreateAccountActivity : AppCompatActivity() {
 
     val mainViewModel : MainViewModel by inject()
 

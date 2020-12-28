@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.loginLiveData.observe(this, Observer {
             when(it){
                 is LoginSuccess -> {
-                    val myIntent : Intent =  Intent(this,Main3Activity::class.java)
+                    val myIntent : Intent =  Intent(this,PokemonListActivity::class.java)
                     startActivity(myIntent)
                 }
                 LoginError -> {
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             mainViewModel.onClickedLogin(login_edit.text.toString().trim(), password_edit.text.toString())
         }
         create_account_button.setOnClickListener(){
-            val myIntent : Intent =  Intent(this,Main2Activity::class.java)
+            val myIntent : Intent =  Intent(this,CreateAccountActivity::class.java)
             startActivity(myIntent)
         }
     }
