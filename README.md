@@ -5,9 +5,12 @@ Réalisation dans le cadre d'un projet de 4ème année au sein de l'ESIEA d'une 
 
 ## Consignes respectées
 - Une liste d'items utilisant une **recyclerView**
-- Une base de données
+- Utilisation d'une **réelle base de donnée**
 - Appel WebService à une **API Rest**
-- **Architecture** MVVM 
+- Affichage de la **liste** en provenance de l'API
+- **Architecture MVVM** 
+- **Clean Architecture**
+- Cette application est plus jolie que celle de l'année précédente :)
 
 ## Caractéristiques
 
