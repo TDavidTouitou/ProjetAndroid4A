@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                 LoginError -> {
                     MaterialAlertDialogBuilder(this)
                         .setTitle("Erreur")
-                        .setMessage("Compte inexistant")
+                        .setMessage("Compte inexistant ou Log(s) incorrect")
                         .setPositiveButton("OK") { dialog, which ->
                             dialog.dismiss()
                         }

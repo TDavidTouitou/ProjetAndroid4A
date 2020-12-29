@@ -7,19 +7,22 @@ import com.example.projetandroid4a.domain.entity.User
 
 @Entity
 data class UserLocal(
-    @ColumnInfo(name = "email") val email: String
+    @ColumnInfo(name = "email") val email: String,
+    @ColumnInfo(name = "pwd") val pwd: String
 ){
     @PrimaryKey(autoGenerate = true) var uid: Int? = null
 }
 
 fun User.toData() : UserLocal{
     return UserLocal(
-        email = email
+        email = email,
+        pwd = pwd
     )
 }
 
 fun UserLocal.toEntity() : User{
     return User(
-        email = email
+        email = email,
+        pwd = pwd
     )
 }

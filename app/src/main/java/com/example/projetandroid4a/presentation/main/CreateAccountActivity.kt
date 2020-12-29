@@ -20,7 +20,7 @@ class CreateAccountActivity : AppCompatActivity() {
 
         confirm_create_account_button.setOnClickListener(){
 
-            val user = User(createLogin_edit.text.toString().trim())
+            val user = User(createLogin_edit.text.toString().trim(), createPassword_edit.text.toString().trim())
             if ((createPassword_edit.text.toString() == createConfirmPassword_edit.text.toString()) && user.email != ""){
                 mainViewModel.onClickedCreateUser(user)
                 MaterialAlertDialogBuilder(this)

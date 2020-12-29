@@ -17,7 +17,7 @@ class CreateUserUseCaseTest {
     fun resendMailSuccess(){
         runBlocking {
             //GIVEN
-            val user = User("")
+            val user = User("","")
             coEvery{ userRepository.createUser(user)}returns Unit
             //WHEN
             classUnderTest.invoke(user)
