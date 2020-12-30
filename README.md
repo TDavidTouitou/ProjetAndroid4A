@@ -1,7 +1,7 @@
 # ProjetAndroid4A
 ### Auteur : David Touitou
 ## Présentation
-Réalisation dans le cadre d'un projet de 4ème année au sein de l'ESIEA d'une application mobile. Celle-ci permet de se connecter via un login mot de passe pour avoir accès à une liste de pokemons. Elle permet également de créer un compte si nécessaire. La plupart des vérifications au niveau de la création de compte sont faites.
+Réalisation dans le cadre d'un projet de 4ème année au sein de l'ESIEA d'une application mobile. Celle-ci permet de se connecter via un login mot de passe pour avoir accès à une liste de pokemons. Elle permet également de créer un compte si nécessaire. La plupart des vérifications au niveau de la création de compte sont faites, comme par exemple si un login existe déjà, ou si les mots de passes ne correspondent pas.
 
 ## Consignes respectées
 - Une liste d'items utilisant une **recyclerView**
