@@ -21,7 +21,7 @@ class CreateAccountActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        /*createAccountViewModel.loginLiveData.observe(this, Observer {
+        createAccountViewModel.loginLiveData.observe(this, Observer {
 
             when(it) {
                 is LoginAlreadyExist -> {
@@ -33,7 +33,7 @@ class CreateAccountActivity : AppCompatActivity() {
                         }
                         .show()
                 }
-                LoginNotExist -> {
+                CreateSuccess -> {
                     MaterialAlertDialogBuilder(this)
                         .setTitle("Succes")
                         .setMessage("Account created")
@@ -41,40 +41,43 @@ class CreateAccountActivity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+                    createLogin_edit.setText("")
+                    createPassword_edit.setText("")
+                    createConfirmPassword_edit.setText("")
+                    //this.finish()
+                }
+                NoPassword -> {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle("Oops !")
+                        .setMessage("There is no password")
+                        .setPositiveButton("OK") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
+                }
+                NoLogin -> {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle("Oops !")
+                        .setMessage("There is no Login")
+                        .setPositiveButton("OK") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
+                }
+                PasswordMissmatch -> {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle("Oops !")
+                        .setMessage("Password missmatch")
+                        .setPositiveButton("OK") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
                 }
             }
-        })*/
+        })
 
         confirm_create_account_button.setOnClickListener(){
-
-            val user = User(createLogin_edit.text.toString().trim(), createPassword_edit.text.toString().trim())
-
-            if ((createPassword_edit.text.toString() == createConfirmPassword_edit.text.toString()) && user.email != "" && user.pwd != ""){
-                //createAccountViewModel.onClickedConfirm(user.email)
-                mainViewModel.onClickedCreateUser(user)
-
-                MaterialAlertDialogBuilder(this)
-                    .setTitle("Success")
-                    .setMessage("Account created")
-                    .setPositiveButton("OK") { dialog, which ->
-                        dialog.dismiss()
-                    }
-                    .show()
-                createLogin_edit.setText("")
-                createPassword_edit.setText("")
-                createConfirmPassword_edit.setText("")
-                /*val myIntent : Intent =  Intent(this,
-                    MainActivity::class.java)
-                startActivity(myIntent)*/
-            }else{
-                MaterialAlertDialogBuilder(this)
-                    .setTitle("Error")
-                    .setMessage("Password Missmatch or no Login")
-                    .setPositiveButton("OK") { dialog, which ->
-                        dialog.dismiss()
-                    }
-                    .show()
-            }
+            createAccountViewModel.onClickedConfirm(createLogin_edit.text.toString().trim(), createPassword_edit.text.toString().trim(),createConfirmPassword_edit.text.toString())
         }
     }
 }
