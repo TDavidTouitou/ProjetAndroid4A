@@ -29,7 +29,6 @@ class MainViewModel(
             withContext(Dispatchers.Main){
                 loginLiveData.value = loginStatus
             }
-
         }
     }
 

@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.main.PokemonListActivity">
+    tools:context=".presentation.pokemonList.PokemonListActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,7 +18,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <fragment
-        android:name="com.example.projetandroid4a.PokemonList"
+        android:name="com.example.projetandroid4a.presentation.pokemonList.PokemonList"
         android:id="@+id/list_pokemon_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

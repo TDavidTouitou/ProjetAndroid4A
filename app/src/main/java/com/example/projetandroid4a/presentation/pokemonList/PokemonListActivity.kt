@@ -1,4 +1,4 @@
-package com.example.projetandroid4a.presentation.main
+package com.example.projetandroid4a.presentation.pokemonList
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
