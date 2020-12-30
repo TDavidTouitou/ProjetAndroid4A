@@ -49,21 +49,32 @@ class CreateAccountActivity : AppCompatActivity() {
 
             val user = User(createLogin_edit.text.toString().trim(), createPassword_edit.text.toString().trim())
 
-                if ((createPassword_edit.text.toString() == createConfirmPassword_edit.text.toString()) && user.email != ""){
-                    //createAccountViewModel.onClickedConfirm(user.email)
-                    mainViewModel.onClickedCreateUser(user)
-                    val myIntent : Intent =  Intent(this,
-                        MainActivity::class.java)
-                    startActivity(myIntent)
-                }else{
-                    MaterialAlertDialogBuilder(this)
-                        .setTitle("Error")
-                        .setMessage("Password Missmatch or no Login")
-                        .setPositiveButton("OK") { dialog, which ->
-                            dialog.dismiss()
-                        }
-                        .show()
-                }
+            if ((createPassword_edit.text.toString() == createConfirmPassword_edit.text.toString()) && user.email != ""){
+                //createAccountViewModel.onClickedConfirm(user.email)
+                mainViewModel.onClickedCreateUser(user)
+
+                MaterialAlertDialogBuilder(this)
+                    .setTitle("Success")
+                    .setMessage("Account created")
+                    .setPositiveButton("OK") { dialog, which ->
+                        dialog.dismiss()
+                    }
+                    .show()
+                createLogin_edit.setText("")
+                createPassword_edit.setText("")
+                createConfirmPassword_edit.setText("")
+                /*val myIntent : Intent =  Intent(this,
+                    MainActivity::class.java)
+                startActivity(myIntent)*/
+            }else{
+                MaterialAlertDialogBuilder(this)
+                    .setTitle("Error")
+                    .setMessage("Password Missmatch or no Login")
+                    .setPositiveButton("OK") { dialog, which ->
+                        dialog.dismiss()
+                    }
+                    .show()
+            }
         }
     }
 }

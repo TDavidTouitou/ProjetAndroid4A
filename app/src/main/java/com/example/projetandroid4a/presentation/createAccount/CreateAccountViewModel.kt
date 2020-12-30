@@ -1,5 +1,6 @@
 package com.example.projetandroid4a.presentation.createAccount
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -15,6 +16,7 @@ class CreateAccountViewModel(
     val loginLiveData: MutableLiveData<LoginExist> = MutableLiveData()
 
     fun onClickedConfirm(emailUser: String) {
+        Log.v("CreateAccountViewModel", "prout")
         viewModelScope.launch(Dispatchers.IO) {
             val user = getUserIdUseCase.invoke(emailUser)
             val loginExist = if (user != null){
