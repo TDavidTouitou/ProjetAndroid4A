@@ -49,7 +49,7 @@ class CreateAccountActivity : AppCompatActivity() {
 
             val user = User(createLogin_edit.text.toString().trim(), createPassword_edit.text.toString().trim())
 
-            if ((createPassword_edit.text.toString() == createConfirmPassword_edit.text.toString()) && user.email != ""){
+            if ((createPassword_edit.text.toString() == createConfirmPassword_edit.text.toString()) && user.email != "" && user.pwd != ""){
                 //createAccountViewModel.onClickedConfirm(user.email)
                 mainViewModel.onClickedCreateUser(user)
 
